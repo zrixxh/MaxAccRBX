@@ -1,1 +1,69 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const services = [
+  { game: "Phantom Forces", desc: "Rank 50 on a new account", price: "£15" },
+  { game: "Blade Ball", desc: "200 wins on a new account", price: "£10" },
+  { game: "KAT", desc: "All items in-game without game passes", price: "Contact for price" },
+  { game: "INK GAMES", desc: "50 wins on a new account", price: "Contact for price" },
+  { game: "Fisch", desc: "Rare fish and rods on a new account", price: "Contact for price" },
+];
+
+const games = [
+  "GAG",
+  "Blade Ball",
+  "Rivals",
+  "KAT",
+  "INK GAMES",
+  "Fisch",
+  "Phantom Forces",
+  "Eat Blobs Simulator",
+  "Merge for SPEED!"
+];
+
+export default function MaxAccRBX() {
+  return (
+    <main className="min-h-screen bg-gray-100 p-8 text-gray-800">
+      <header className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-purple-700">MaxAccRBX</h1>
+        <p className="text-lg text-gray-600 mt-2">Maxed out Roblox accounts for your favorite games</p>
+      </header>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-700">Available Games</h2>
+        <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {games.map((game, index) => (
+            <li key={index} className="bg-white rounded-2xl p-4 shadow text-center font-medium">
+              {game}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-700">Services</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {services.map((service, index) => (
+            <Card key={index} className="bg-white rounded-2xl shadow">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-purple-600 mb-2">{service.game}</h3>
+                <p className="mb-2">{service.desc}</p>
+                <p className="font-semibold">{service.price}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-700">Account Store</h2>
+        <p className="mb-6 text-gray-600">Browse new and old accounts for sale. Contact us for availability and pricing.</p>
+        <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-2xl px-6 py-2">
+          Contact Us
+        </Button>
+      </section>
+    </main>
+  );
+}
 
